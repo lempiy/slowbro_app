@@ -40,7 +40,7 @@ class _ControlScreenState extends State<ControlScreen> {
         DeviceOrientation.landscapeLeft,
       ]);
     }
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     Wakelock.enable();
   }
 
@@ -62,7 +62,7 @@ class _ControlScreenState extends State<ControlScreen> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
     super.dispose();
     Wakelock.disable();
   }

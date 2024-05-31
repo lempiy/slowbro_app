@@ -23,7 +23,7 @@ class HandshakeApi {
 
   Future<HandshakeResponse> handshake(HandshakeRequest request) async {
     HandshakeResponse data = await _client
-        .post(Uri.parse("https://rocky-gorge-69260.herokuapp.com"),
+        .post(Uri.parse("https://slowbro-signal-240f8ce4c14f.herokuapp.com"),
         headers: {"Content-Type": "application/json"},
     body: handshakeRequestToJson([request]))
         .then((response) {
@@ -79,7 +79,7 @@ class Signaller {
   Future<void> connect() async {
     try {
       print("Connecting to WS...");
-      _ws = await WebSocket.connect('wss://rocky-gorge-69260.herokuapp.com');
+      _ws = await WebSocket.connect('wss://slowbro-signal-240f8ce4c14f.herokuapp.com');
       print("WS ready...");
       _ws!.done.then((_) => _onDisconnect());
       _channel = IOWebSocketChannel(_ws!);
